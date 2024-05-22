@@ -5,12 +5,27 @@ const addEmployeesBtn = document.querySelector('#add-employees-btn');
 const collectEmployees = function() {
   // TODO: Get user input to create and return an array of employee objects
 
-  let userInput = [];
-  while (userInput !== 'Cancel') {
-    userInput = prompt('Enter Employee Information (Type "Cancel" to Stop)');
-    return userInput.push('You Entered: ' + userInput);
-  }
-  console.log('Loop Ended.');
+let employees = [];
+let addEmployees = true;
+
+while (addEmployees) {
+  let firstName = prompt('Enter Employee First Name:');
+  let lastName = prompt('Enter Employee Last Name:');
+  let salaryInput = prompt('Enter Employee Salary');
+  let salary = isNaN(Number(salaryInput)) ? 0 : Number(salaryInput);
+
+  employees.push({
+    firstName: firstName,
+    lastName: lastName,
+    salary: salary
+  });
+
+  let continueInput = prompt('Do You Want To Add Another Employee? (Yes/No)');
+  addEmployee = continueInput.toLowerCase() === 'Yes';
+
+}
+
+return employees;
 
 }
 
