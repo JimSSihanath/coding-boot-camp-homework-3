@@ -21,7 +21,7 @@ const collectEmployees = function() {
     });
 
     let continueInput = prompt('Do You Want To Add Another Employee? (Yes/No)');
-    addEmployee = continueInput.toLowerCase() === 'Yes';
+    addEmployees = continueInput.toLowerCase() === 'Yes';
 
   }
 
