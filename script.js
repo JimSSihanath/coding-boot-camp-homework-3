@@ -29,6 +29,8 @@ const collectEmployees = function() {
 
 }
 
+collectEmployees(employees);
+
 // Display the average salary
 const displayAverageSalary = function(employees) {
   // TODO: Calculate and display the average salary
@@ -45,10 +47,26 @@ const displayAverageSalary = function(employees) {
 
 }
 
+displayAverageSalary(employees);
+
 // Select a random employee
-const getRandomEmployee = function(employeesArray) {
+const getRandomEmployee = function(employees) {
   // TODO: Select and display a random employee
+
+  if (employees.length === 0) {
+    console.log('No Employees Available.');
+    return;
+  }
+
+  const randomIndex = Math.floor(Math.random() * employees.length);
+
+  const randomEmployee = employees[randomIndex];
+
+  console.log(`Random Employee: ${randomEmployee.firstName} ${randomEmployee.lastName}`);
+
 }
+
+getRandomEmployee(employees);
 
 /*
   ====================
