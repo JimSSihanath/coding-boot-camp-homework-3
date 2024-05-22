@@ -5,33 +5,44 @@ const addEmployeesBtn = document.querySelector('#add-employees-btn');
 const collectEmployees = function() {
   // TODO: Get user input to create and return an array of employee objects
 
-let employees = [];
-let addEmployees = true;
+  let employees = [];
+  let addEmployees = true;
 
-while (addEmployees) {
-  let firstName = prompt('Enter Employee First Name:');
-  let lastName = prompt('Enter Employee Last Name:');
-  let salaryInput = prompt('Enter Employee Salary');
-  let salary = isNaN(Number(salaryInput)) ? 0 : Number(salaryInput);
+  while (addEmployees) {
+    let firstName = prompt('Enter Employee First Name:');
+    let lastName = prompt('Enter Employee Last Name:');
+    let salaryInput = prompt('Enter Employee Salary');
+    let salary = isNaN(Number(salaryInput)) ? 0 : Number(salaryInput);
 
-  employees.push({
-    firstName: firstName,
-    lastName: lastName,
-    salary: salary
-  });
+    employees.push({
+      firstName: firstName,
+      lastName: lastName,
+      salary: salary
+    });
 
-  let continueInput = prompt('Do You Want To Add Another Employee? (Yes/No)');
-  addEmployee = continueInput.toLowerCase() === 'Yes';
+    let continueInput = prompt('Do You Want To Add Another Employee? (Yes/No)');
+    addEmployee = continueInput.toLowerCase() === 'Yes';
 
-}
+  }
 
-return employees;
+  return employees;
 
 }
 
 // Display the average salary
-const displayAverageSalary = function(employeesArray) {
+const displayAverageSalary = function(employees) {
   // TODO: Calculate and display the average salary
+
+  let totalSalary = 0;
+
+  employees.forEach(employee => {
+    totalSalary += employee.salary;
+  });
+
+  const averageSalary = totalSalary / employees.length;
+
+  console.log(`The Average Salary Of The Employees Is: ${averageSalary}`);
+
 }
 
 // Select a random employee
