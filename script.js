@@ -36,7 +36,9 @@ const displayAverageSalary = function(employees) {
   let totalSalary = 0;
 
   employees.forEach(employee => {
+
     totalSalary += employee.salary;
+    
   });
 
   const averageSalary = totalSalary / employees.length;
